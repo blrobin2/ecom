@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
+deploy:
+  provider: heroku
+  api_key:
+    secure: mvZMDvohcuAPuDF77HGsUqJ3hsdNwG8hMiLoG34evcFP8TzLM7BTo91BYYgPOWdcvzf1dqAhil4VIWAd4FKWZAYdfraAypsPJ18vv1uejbiXQQBfgwnaNPbprSde6hxxFjMZSmms62hWVGQoTneYSRawLqvYJDSKHvnYZ1FelQ/yIbsXBxOrmVaSsb5vnZSoEgtfUfzZwYqMl8XqZHKiptNk8Ftc352Qsi9gKzqKN5QNp7Qfm/7UBbK0mNhq7xulE6Hc05JAUPoSgj3pwnWrbRYmC9huxzpJiIjgpZvRj/QlocryIt2LDmt95yoly8sBaA5iIIl/8bPwaf6KBid+Sq7BeBuPhxXS+JayIlMm2VfJgLssz+R6Ey5nT+dGM4meMdNnXlbYyfo3jICQKV9jvOewkBkCfXKZl4cI445rrWEelm2xG5r9LbhCCS2wrks0bevJVw38QBsmXYlQOp5NnsmKLr29WRTec3IyBIK/IrnKNHr3xGQ58Z9Km7sI8sIRJpN+p6BhMVdwsO2ok3iPWaWe766waRTTiIMpnfCmroW0c99BFvEMBhB30ZKbJtirvMH8JiirsziuJObgSoxw3rzbhV2K3KrlFx2LdrkOtg3mhciVWicOakndUb2nB9i/epO+2UfrZUAozfP9v1m/yADRPzoLBhXXbzXTejJu738=
+  app: ecom-ci
+  on:
+    repo: blrobin2/ecom
