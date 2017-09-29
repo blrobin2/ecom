@@ -1,0 +1,23 @@
+{
+  "name": "learn-ci",
+  "version": "1.0.0",
+  "description": "A fake ecommerce store for learning CI and TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blrobin2/ecom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blrobin2/ecom/issues"
+  },
+  "homepage": "https://github.com/blrobin2/ecom#readme",
+  "devDependencies": {
+    "jasmine": "^2.8.0"
+  }
+}
