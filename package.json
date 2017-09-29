@@ -2,7 +2,10 @@
   "name": "learn-ci",
   "version": "1.0.0",
   "description": "A fake ecommerce store for learning CI and TDD",
-  "main": "index.js",
+  "main": "server.mjs",
+  "engines": {
+    "node": "8.6.0"
+  },
   "scripts": {
     "test": "babel-node spec/run.js",
     "test:watch": "nodemon --exec npm test",
