@@ -1,6 +1,8 @@
+// const ApplicationRunner = require('./ApplicationRunner')
+
 // describe('Auction Sniper', () => {
 //   const auction = new FakeAuctionServer('item-54321')
-//   const application = new ApplicationRunner
+//   const application = new ApplicationRunner(browser)
 
 //   it('can join auction until auction closes', () => {
 //     auction.startSellingItem()
