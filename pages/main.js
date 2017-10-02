@@ -1,6 +1,8 @@
 module.exports = {
   url: 'localhost:8080',
   elements: {
-    title: 'h1'
+    header: {
+      selector: '#header'
+    }
   }
 }

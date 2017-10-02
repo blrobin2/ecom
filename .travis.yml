@@ -13,10 +13,9 @@ before_install:
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
 before_script:
+  - jdk_switcher use oraclejdk8
   - npm start &
   - sleep 2
-script:
-  - jdk_switcher use oraclejdk8
 deploy:
   provider: heroku
   api_key:

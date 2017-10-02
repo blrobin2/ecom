@@ -9,8 +9,8 @@ module.exports = class AuctionSniperDriver {
 
   showSniperStatus(statusText) {
     this.browser
-      .assert.visible('h1')
       .assert.title('Hello')
+      .assert.visible('#header')
   }
 
   dispose() {
