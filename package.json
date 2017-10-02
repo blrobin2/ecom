@@ -38,6 +38,7 @@
   "dependencies": {
     "amqplib": "^0.5.1",
     "express": "^4.16.0",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "string-format-js": "^1.0.0"
   }
 }
