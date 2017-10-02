@@ -3,14 +3,15 @@
 module.exports = class AuctionSniperDriver {
   constructor(browser, timeoutMillis) {
     this.browser = browser
-    this.browser.page.main().navigate()
+    this.page = this.browser.page.main()
+    this.page.navigate()
       .waitForElementVisible('body', timeoutMillis)
   }
 
   showSniperStatus(statusText) {
-    this.browser
+    this.page
       .assert.title('Hello')
-      .assert.visible('#header')
+      .assert.visible('@header')
   }
 
   dispose() {
