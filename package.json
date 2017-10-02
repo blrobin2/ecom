@@ -7,11 +7,12 @@
     "node": "8.6.0"
   },
   "scripts": {
-    "test": "babel-node test/spec/run.js",
-    "test:watch": "nodemon --exec npm test",
+    "test.unit": "mocha --compilers js:babel-core/register test/unit",
+    "test.e2e": "nightwatch --config nightwatch.conf.js",
+    "test": "npm run test.unit && npm run test.e2e",
+    "test:watch": "npm test.unit -- -w",
     "start": "nodemon --experimental-modules server.mjs",
-    "nightwatch": "nightwatch --config nightwatch.conf.BASIC.js",
-    "postinstall": "node nightwatch.conf.BASIC.js"
+    "postinstall": "node nightwatch.conf.js"
   },
   "repository": {
     "type": "git",
@@ -28,9 +29,11 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "jasmine": "^2.8.0",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
     "nightwatch": "^0.9.16",
-    "selenium-download": "^2.0.10"
+    "selenium-download": "^2.0.10",
+    "sinon": "^4.0.0"
   },
   "dependencies": {
     "amqplib": "^0.5.1",
