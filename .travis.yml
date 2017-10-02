@@ -4,6 +4,9 @@ node_js:
 sudo: required
 services:
   - rabbitmq
+before_script:
+  - npm start &
+  - sleep 2
 deploy:
   provider: heroku
   api_key:
