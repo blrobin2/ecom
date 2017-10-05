@@ -1,6 +1,6 @@
 const AuctionSniperDriver = require( './AuctionSniperDriver')
 
-const STATUS_JOINING = 'Joining'
+const STATUS_JOINING = 'Joined'
 const STATUS_LOST = 'Lost'
 
 module.exports = class ApplicationRunner {
@@ -16,16 +16,11 @@ module.exports = class ApplicationRunner {
     this._driver = null
   }
 
-  startBiddingIn(auction) {
-    // const testApp = (() => {
-    //   try {
-    //     main('localhost', this.SNIPER_ID, this.SNIPER_PASSWORD, auction.getItemId())
-    //   } catch (e) {
-    //     console.trace(e)
-    //   }
-    // })()
-
+  async startBiddingIn(auction) {
     this._driver = new AuctionSniperDriver(this.browser, 1000)
+    this.browser.perform((browser, done) => {
+      auction.join().then(() => done())
+    })
     this._driver.showSniperStatus(STATUS_JOINING)
   }
 

@@ -22,9 +22,9 @@ module.exports = {
         enabled: false,
         path: ""
       },
-      globals: {
-        waitForConditionTimeout: 5000
-      },
+      // globals: {
+      //   waitForConditionTimeout: 5000
+      // },
       desiredCapabilities: {
         browserName: "chrome",
       },

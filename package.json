@@ -30,6 +30,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
+    "chai-nightwatch": "^0.1.1",
     "mocha": "^3.5.3",
     "nightwatch": "^0.9.16",
     "selenium-download": "^2.0.10",
@@ -39,6 +40,7 @@
     "amqplib": "^0.5.1",
     "express": "^4.16.0",
     "nodemon": "^1.12.1",
+    "socket.io": "^2.0.3",
     "string-format-js": "^1.0.0"
   }
 }
