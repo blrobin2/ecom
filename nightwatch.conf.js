@@ -6,7 +6,7 @@ const BINPATH = './node_modules/nightwatch/bin/'
 
 module.exports = {
   src_folders: ['./test/e2e'],
-  page_objects_path: './pages',
+  page_objects_path: './test/e2e/pages',
   selenium: {
     start_process: true,
     server_path: `${BINPATH}selenium.jar`,
@@ -48,6 +48,6 @@ stat(`${BINPATH}selenium.jar`)
   .catch(err => {
     require('selenium-download').ensure(BINPATH, err => {
       if (err) throw new Error(err)
-      console.log(`Selenium & Chromedriver downloaeed to: ${BINPATH}`)
+      console.log(`Selenium & Chromedriver downloaded to: ${BINPATH}`)
     })
   })

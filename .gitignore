@@ -58,3 +58,4 @@ typings/
 .env
 
 tests_output/
+selenium-debug.log

@@ -8,23 +8,10 @@
 </head>
 <body>
   <h1 id="sniperStatus">Ready</h1>
-  <div id="errors"></div>
   <script src="socket.io/socket.io.js"></script>
-  <script type="text/javascript">
-      window.onerror=function(msg) {
-        document.body.setAttribute("JSError", msg)
-      }
-  </script>
   <script type="module">
-    const socket = io()
-    socket.on('auction.joined', msg => {
-      document.getElementById('sniperStatus').innerHTML = 'Joined'
-    })
-    socket.on('auction.closed', msg => {
-      document.getElementById('sniperStatus').innerHTML = 'Lost'
-    })
-    import test from './index.js'
-    test()
+    import { init } from './src/messages.js'
+    init()
   </script>
 </body>
 </html>

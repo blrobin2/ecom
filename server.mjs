@@ -2,6 +2,7 @@ import express from 'express'
 import http from 'http'
 import socketIo from 'socket.io'
 import amqp from 'amqplib'
+import child_process from 'child_process'
 
 const app = express()
 app.set('port', process.env.PORT || 8080)
@@ -38,6 +39,14 @@ async function _createExchange(exchangeName) {
 
   return {conn, ch, ex}
 }
+
+app.get('/available-items', (req, res) => {
+  let available;
+  child_process.exec('rabbitmqctl list_queues', (err, stdout, stderr) => {
+    available = stdout.split("\n")
+    res.send(JSON.stringify(available.splice(1)))
+  })
+})
 
 server.listen(app.get('port'), () => {
   console.log(`Listening on ${app.get('port')}`)

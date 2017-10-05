@@ -3,6 +3,8 @@ const FakeAuctionServer = require('./helpers/FakeAuctionServer')
 let application;
 let auction;
 
+const exec = require('child_process').exec
+
 module.exports = {
   before: browser => {
     application = new ApplicationRunner(browser)
@@ -30,6 +32,8 @@ module.exports = {
   after: browser => {
     auction.stop()
     application.stop()
+    // LOOK AT THIS SHIT. REALLY?
+    exec('kill $(lsof -ti tcp:4444)')
     process.exit()
   }
 }

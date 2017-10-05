@@ -18,10 +18,14 @@ module.exports = class ApplicationRunner {
 
   async startBiddingIn(auction) {
     this._driver = new AuctionSniperDriver(this.browser, 1000)
-    this.browser.perform((browser, done) => {
-      auction.join().then(() => done())
-    })
+    this.execAsync(auction.join.bind(auction))
     this._driver.showSniperStatus(STATUS_JOINING)
+  }
+
+  execAsync(func) {
+    this.browser.perform((browser, done) => {
+      func().then(() => done())
+    })
   }
 
   showSniperHasLostAuction() {
