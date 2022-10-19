@@ -38,8 +38,8 @@
   "dependencies": {
     "amqplib": "^0.5.1",
     "express": "^4.16.0",
-    "nodemon": "^1.12.1",
-    "socket.io": "^2.0.3",
+    "nodemon": "^2.0.17",
+    "socket.io": "^3.0.0",
     "string-format-js": "^1.0.0"
   }
 }
