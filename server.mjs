@@ -1,12 +1,16 @@
 import express from 'express'
-import http from 'http'
+import https from 'https'
 import socketIo from 'socket.io'
 import amqp from 'amqplib'
 import child_process from 'child_process'
+import limit from 'express-limit'
+import helmet from 'helmet'
 
 const app = express()
+app.use(helmet())
+
 app.set('port', process.env.PORT || 8080)
-const server = http.createServer(app)
+const server = https.createServer(app)
 const io = socketIo.listen(server)
 
 const AMPQ_HOSTNAME = process.env.CLOUDAMQP_URL || "amqp://localhost"
@@ -40,7 +44,10 @@ async function _createExchange(exchangeName) {
   return {conn, ch, ex}
 }
 
-app.get('/available-items', (req, res) => {
+app.get('/available-items', limit({
+  max: 5,
+  period: 60 * 1000
+}), (req, res) => {
   let available;
   child_process.exec('rabbitmqctl list_queues', (err, stdout, stderr) => {
     available = stdout.split("\n")
